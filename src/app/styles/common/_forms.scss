@@ -1,0 +1,94 @@
+@import './variables';
+
+.alert {
+    color: red;
+    padding-top: 2px;
+}
+
+.btn-login {
+    display: inline-block;
+    width: 70%;
+    background-color: $btn-color;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;  
+    padding: 5px;
+    margin-top: 30px;
+    border: none;
+
+}
+
+.col {
+    margin: 0;
+}
+
+.col:first-child{
+    padding-top:5px;
+}
+
+ .span-1-of-2 {
+    width: 100%
+}
+
+.section-form {
+    margin: 50px 50px 50px 50px;
+}
+
+.form-input {
+    margin-bottom: 15px;
+} 
+
+input {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid #cfcfcf;
+    padding-top: 10px;  
+    width: 250px;
+}
+
+.login-text {
+margin-bottom: 15px;
+}
+
+.main-section-text {
+    margin-bottom : 50px;
+    }
+[disabled]{
+    background-color : darkGray;
+    font-style: italic;
+    }  
+
+@media only screen and (min-width:1023px){
+    .title {
+        margin-left:180px;
+    }
+}
+
+@media only screen and (min-width:768px){
+    .span-1-of-2 {
+        width: 49%
+    }
+    .btn-login {
+     width: 53%;
+        }
+        input {
+            width: 53%;
+        }
+
+  .main-section-text {
+    margin-top : 30px;
+    margin-right: 10px;
+    }
+    
+    .section-form {
+        margin-top: 50px;
+    }
+
+}
+
+@media only screen and (min-width:768px) and (max-device-width: 1024px) {
+    .title {
+        margin-left:60px;
+    }
+}

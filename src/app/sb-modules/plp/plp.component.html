@@ -1,0 +1,60 @@
+
+  <!--   <head>
+        <link  rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Dosis:400,600,700'>
+        
+    </head> -->
+
+    <body>
+       <section id="main-content" tabindex="-1" class="section-plp">
+        <div class="row">
+            <aside>
+            <nav class="col span-2-of-10 sidebar">
+                <ul >
+                    <li *ngFor="let category of categories; let i = index" (click)="categorySelect(category.value,i)" [class.active]="categorySelected === category.value">
+                        <a [routerLink]="" [title]="category.name" >{{category.name}}</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <nav aria-label="Global links" class="topnav">
+            <div class="open-dropdown" (click)="dropdownToggle()">{{dropdwonTitleText}}</div>
+                <ul class="dropdown" [ngClass]="dropdownFlag === true ? 'myLinks' : 'hidden'">
+                    <li *ngFor="let category of categories; let i = index" (click)="categorySelect(category.value,i)" [class.active]="categorySelected === category.value">
+                        <a [routerLink]="" [title]="category.name" >{{category.name}}</a></li>
+                </ul>
+              </nav>
+            
+
+
+           <!--  <div > -->
+                <section class="col span-8-of-10">
+                    <h1 style="display:none;">product listing page</h1>
+                   <!--  <div class="row"> -->
+                       <div *ngFor="let product of selectedProduts"  class="col span-1-of-4 product-container">
+                            <h3 class="product-name" [ngStyle]="{'font-size': product.name && product.name.length > 60 ? '0.9rem' : '1rem'}">{{product.name}}</h3>
+                            <div class="item">    
+                        
+                           
+                            <img class="product-image" src="../../../assets{{product.imageURL}}" alt="">
+                           <div class="product-text">
+                            <p class="product-desc">
+                                    {{product.description}}
+                            </p>
+                            <div class="price-btn-mbl">
+                                    <button class="btn btn-tile btn-buy"  attr.aria-label="{{product.name}} Rs. {{product.price}} Buy Now" href="#" (click)="buyNow(product)"> Buy Now @ Rs. {{product.price}}</button>
+                            </div>
+                            <div class="price-btn-desktop">
+                                   <span class="price-desktop">MRP Rs. {{product.price}}</span> 
+                                <button class="btn btn-tile btn-buy"  attr.aria-label="{{product.name}} Rs. {{product.price}} Buy Now" href="#" (click)="buyNow(product)">  Buy Now</button>
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+                   <!--  </div> -->
+                </section>
+            <!-- </div> -->
+
+
+            
+        </div>
+    </section>

@@ -1,0 +1,53 @@
+<header>
+  <a class="skip-main no-outline" [href]="skipLinkPath">Skip to main content</a>
+  <!-- <h1>Skip to Main Content - Keyboard Accessible</h1> -->
+  <div class="row desktop">
+ 
+      <a class="col span-1-of-3" routerLink='/home' title="sabka bazar"> <img src="../../../assets/images/logo.png" alt="sabka bazar logo"></a>
+
+    <nav aria-label="Global links" class="col span-1-of-3 navigate">
+      <ul role="presentation">
+        <li role="nav item"><a routerLink="/home" title="home">Home</a></li>
+        <li role="nav item"><a routerLink="/plp" title="products">Products</a></li>
+      </ul>
+    </nav>
+    <div  class="signin-col span-1-of-3">
+      <nav aria-label="signin navigation" class="row">
+        <ul class="signin-links" role="presentation" >
+          <li role="nav item"><a routerLink="/login" title="Sign in">Sign in</a></li>
+          <li role="nav item"><a routerLink="/register" title="Register">Register</a></li>
+        </ul>
+        <button class="btn btn-cart" aria-label="cart button" (click)="openCart()">
+          <img src="../../../../assets/images/cart.svg" alt="cart logo" title="cart logo" class="cart-img">
+          <div class="cart-items-text" *ngIf="totalItems == 0"> {{totalItems}} item</div>
+          <div class="cart-items-text" *ngIf="totalItems > 0"> {{totalItems}} items</div>
+        </button>
+      </nav>
+    </div>
+  </div>
+
+
+  <nav aria-label="Global links" class="topnav">
+    <a routerLink='/login'> <img src="../../../assets/images/logo.png" alt="sabka bazar logo" title="sabka bazar"
+        class="logo-img"></a>
+    <div [ngClass]="addHamburgerCss === true ? 'myLinks' : 'hidden'" >
+      <a routerLink="/home" (click)="hamburgerClicked()" title="home">Home</a>
+      <a routerLink="/plp" (click)="hamburgerClicked()" title="products">Products</a>
+      <a routerLink="/login" (click)="hamburgerClicked()" title="Sign in">Login</a>
+      <a routerLink="/register" (click)="hamburgerClicked()"  title="Register">Register</a>
+    </div>
+    <a class="cart" (click)="openCart()">
+        <img src="../../../../assets/images/cart.svg" alt="cart logo" title="cart logo" class="cart-img-mobile">
+         <span class="cart-text-m">{{totalItems}}&nbsp;items</span> 
+    </a>
+  <a class="icon" (click)="hamburgerClicked()"> 
+      <i class="fa fa-bars"></i>
+    </a>
+  </nav>
+
+
+
+</header>
+
+<app-cart></app-cart>
+<div *ngIf="openCartFlag" class="header-overlay" (click)="openCart()"></div>

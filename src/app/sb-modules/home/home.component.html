@@ -1,0 +1,142 @@
+<!-- <head>
+  <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Dosis:400,600,700'>
+</head> -->
+
+
+<section id="main-content" tabindex="-1">
+  <div class="slide-container">
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+
+      <!-- Full-width images with number and caption text -->
+      <ng-container *ngFor="let banner of banners; let i = index">
+        <div class="mySlides fade" [ngStyle]="{'display': bannerStyle[i]}" [attr.aria-hidden]="bannerStyle[i] == 'block' ? false: true">
+         <!--  <div class="numbertext">1 / 5</div> -->
+          <img src="../../../assets{{banner.bannerImageUrl}}" alt="{{banner.bannerImageAlt}}" style="width:100%">
+        </div>
+      </ng-container>
+
+      <!-- Next and previous buttons -->
+      <button class="prev" (click)="plusSlides(-1)">&#10094;</button>
+      <a class="next" (click)="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <!-- The dots/circles -->
+    <div class="slides-dot">
+      <span class="dot" (click)="currentSlide(1)"></span>
+      <span class="dot" (click)="currentSlide(2)"></span>
+      <span class="dot" (click)="currentSlide(3)"></span>
+      <span class="dot" (click)="currentSlide(4)"></span>
+      <span class="dot" (click)="currentSlide(5)"></span>
+    </div>
+  </div>
+
+ <!--  <figure class="clearfix row home-tile left-image">
+    <img  class="col span-1-of-2" src="../../../assets{{category.imageUrl}}" alt="{{category.name}}" src="../../../assets/images/category/baby.png" style="height:150px; width:auto;display: block; float: left;">
+    <figcaption class="clearfix col title-text span-1-of-2" style="float: left;">
+        <h2>{{category.name}} || MaNGO</h2>
+        <p>{{category.description}} || Description here</p>
+        <button (click)="plpPageId(category.id)" class="btn-tile btn-home">{{category.key}} || Explore mango</button>
+    </figcaption>
+  </figure> -->
+  
+  <ng-container *ngFor="let category of categories; let index=index; let odd=odd; let even=even;">
+    <div *ngIf="odd">
+        <figure class="clearfix row home-tile left-image">
+            <img  class="col span-1-of-2" src="../../../assets{{category.imageUrl}}" alt="{{category.name}}">
+            <figcaption class="clearfix col title-text span-1-of-2">
+                <h2>{{category.name}}</h2>
+                <p>{{category.description}}</p>
+                <a (click)="plpPageId(category.id)" class="btn-tile btn-home">{{category.key}}</a>
+            </figcaption>
+          </figure>
+   <!--  <div class="row home-tile clearfix">
+      <div class="col span-1-of-2">
+        <figure class="left-image">
+          <img src="../../../assets{{category.imageUrl}}" alt="{{category.name}}">
+        </figure>
+      </div>
+      <div class="col span-1-of-2 title-text clearfix">
+        <h2>{{category.name}}</h2>
+        <p>{{category.description}}</p>
+        <button (click)="plpPageId(category.id)" class="btn-tile btn-home">{{category.key}}</button>
+      </div>
+
+    </div> -->
+    <!-- <div class="below-row"></div> -->
+  </div>
+  <div *ngIf="even">
+     <figure class="clearfix row home-tile left-image">
+            <figcaption class="clearfix col title-text span-1-of-2" >
+              <!--<h1></h1>-->
+                <h2>{{category.name}}</h2>
+                <p>{{category.description}}</p>
+                <a (click)="plpPageId(category.id)" class="btn-tile btn-home">{{category.key}}</a>
+            </figcaption>
+            <img  class="col span-1-of-2" src="../../../assets{{category.imageUrl}}" alt="{{category.name}}">
+          </figure>
+    <!-- <div class="row home-tile clearfix">
+
+      <div class="col span-1-of-2 title-text clearfix">
+        <h2>{{category.name}}</h2>
+        <p>{{category.description}}</p>
+        <button (click)="plpPageId(category.id)" class="btn-tile btn-home">{{category.key}}</button>
+      </div>
+      <div class="col span-1-of-2">
+        <figure class="left-image">
+          <img src="../../../assets{{category.imageUrl}}" alt="{{category.name}}">
+        </figure>
+      </div>
+
+    </div> -->
+  <!--   <div class="below-row"></div> -->
+  </div>
+  </ng-container>
+  <!-- <div class="row home-tile ">
+       
+            <div class="col span-1-of-2 title-text clearfix">
+                <h2>Bakery Cakes and Dairy</h2>
+                <p>The best cupcakes, cookies, cakes, pies, cheesecakes, fresh bread, biscotti, muffins, bagels, fresh coffee, milk and more.</p>
+                <a href="#" class="btn-tile">Explore fruit-and-veg</a>
+                </div>
+
+                <div class="col span-1-of-2">
+                        <figure class="left-image">
+                            <img src="../../../assets/images/category/bakery.png" alt="fruit basket">
+                        </figure>
+                        </div>
+    </div> -->
+
+
+</section>
+
+
+<!--  <script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script> -->

@@ -1,0 +1,129 @@
+@import './variables';
+
+*{
+    font-family: 'Dosis','Arial';
+	font-size: 18px;
+    margin: 0;
+}
+
+/* body {
+    margin-top: 5px;
+} */
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.icon-big {
+    font-size: 200%;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+
+
+.btn {
+    display: inline-block;
+    width: 20%;
+    margin-top: 5%;
+    margin-left: 10%;
+    height: auto;
+    padding: 2%;
+    background-color: $btn-color;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    margin-bottom: -15px;   
+}
+
+.btn-text{
+    vertical-align: center;
+}
+
+#main-content {
+    outline: 0;
+    }
+
+
+input:hover, input:active {
+    outline: 0;
+    background: transparent;
+    border-bottom: 2px solid #1a76ac;
+    
+}
+
+a:hover {
+    border-bottom: 1px solid $btn-color;
+  }
+
+label {
+    font-size: 70%;
+    color: #1a76ac;
+}
+
+* {-webkit-box-sizing:border-box;box-sizing:border-box}
+
+
+
+.slides-dot {
+    text-align: center;
+    margin-bottom: 2%;
+    
+}
+
+
+
+.title-text {
+    padding: 5px;
+    float: left;
+    margin-top: 4% !important;
+    text-align: center;
+}
+.title-text h2 {
+    margin-left: 4% ;
+    font-size: 85%;
+}
+
+
+
+.title-text p {
+    margin-top: 4%;
+    font-size: 65%;
+}
+
+
+.btn-tile {
+    display: inline-block;
+    background-color: $btn-color;
+    padding: 2%;
+    text-decoration: none;
+    color: white;
+    margin-left: 4%;
+    margin-top: 3%;
+}
+
+.clearfix {zoom: 1;}
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.hidden-label {
+    display: none;
+    }
+    .label-display {
+        display: block;
+    }
+
+@media only screen and (max-width:1023px){
+    .left-image img {
+         width: 100%;
+  height: auto; 
+    }
+}

@@ -1,0 +1,46 @@
+
+<div *ngIf="openCart" class="cart-container" [ngStyle]="{'background-color': products.length > 0 ? 'rgb(214, 214, 214)': 'white'}">
+        <header class="item-header">
+                <div class="items-text"><strong>My Cart</strong><span class="item-text-sm" *ngIf="products.length > 0">&nbsp;({{totalItems}} item)</span>
+                <button class="close-btn" (click)="closeCart()" aria-label="Close dialog">&#10006;</button>
+                </div>
+        </header>
+
+        <section class="item-body" *ngFor="let product of products">
+                <div class="product" *ngIf="product.number > 0">
+                       <a href="#" [title]="product.name"><img class="product-image" src="../../../assets{{product.imageURL}}" alt="" ></a>
+                <div class="product-name" [ngStyle]="{'font-size': product.name && product.name.length > 50 ? '0.6rem' : '0.8rem'}">{{product.name}}</div>
+                <button class="porduct-num product-minus" (click) = "deleteProduct(product)" aria-label="decrement" tabindex="0" role="button" attr.aria-label="total quantity is {{product.number}} and price for one is {{product.price}} click to decrease one quantity
+                 and total price of item is {{product.price*product.number}}"><span class="minus">-</span></button>
+                <span class="product-number">{{product.number}}</span>
+                <button class="porduct-num product-plus" (click)="addProduct(product)" aria-label="increment" tabindex="0" role="button"  attr.aria-label="total quantity is {{product.number}} and price for one is {{product.price}} click to increase one quantity
+                and total price of item is {{product.price*product.number}}"><span class="plus">+</span></button>
+               
+                <span class="product-mutiple" [attr.aria-label]="'the rating is ' + rating + ' out of ' + starAmount + ' stars'">&times;</span>
+                <span class="product-price">{{product.price}}</span>
+                <span class="product-total-price">{{product.price*product.number}}</span>
+        </div>
+
+        </section>
+
+        <div class="brand-banner clearfix"  *ngIf="products.length > 0 ; else noProductBody">
+                        <img src="../../../assets/images/lowest-price.png" alt="lowest price logo" class="logo-img"> <div class="image-text">you won't find it cheaper anywhere</div>
+        </div>
+
+        <ng-template #noProductBody>
+                <div class="noProductBody">
+<div class="no-item-text"><h2>No item in your cart</h2></div>
+<div><p>Your favourite items are just click away</p></div>
+</div>
+        </ng-template>
+
+
+        <footer class="item-footer"  *ngIf="products.length > 0 ; else noProduct">
+                       <div class="promo-code" >promo code can be applied on payment page</div>
+                       <button class="btn btn-tile btn-cart" (click)="closeCart()" ><span class="btn-text" >Proceed to Checkout</span><span class="price">Rs.{{totalPrice}}</span></button>
+                </footer>
+        <ng-template #noProduct>
+                        <button class="btn btn-tile btn-cart" routerLink="/plp" (click)="closeCart()"><span class="no-product-btn" >Start Shoping</span></button>
+        </ng-template>
+</div>
+

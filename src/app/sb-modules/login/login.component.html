@@ -1,0 +1,58 @@
+<!-- <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Dosis:400,600,700'>
+</head> -->
+
+<!-- <body class="container"> -->
+    <section id="main-content" tabindex="-1" class="row section-form">
+
+        <!-- <div class="row"> -->
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+                <div class="row">
+                    <div class="col span-1-of-2 main-section-text">
+                        <h1 class="title login-text">Login</h1>
+                        <p class="title">Get access to your orders wish list and recommendations </p>
+                    </div>
+                    <div class="col span-1-of-2">
+                        <div class="row form-input">
+                                <label class="label-display" for="email">Email</label>
+                            <input type="email" formControlName="email" size="50" placeholder="Email"
+                                 required aria-required="true" aria-describedby="email-required" >
+                                 <div *ngIf="f.email.invalid && (f.email.dirty || f.email.touched)"
+                                 class="alert alert-danger">
+                                 <div id="email-required" *ngIf="f.email.errors.required">
+                                    email is required.
+                                </div>
+                                <div *ngIf="f.email.status == 'INVALID' && !f.email.errors.required">
+                                     Please enter a valid email.
+                                </div>
+                                </div>
+                        </div>
+
+                        <div class="row">
+                                <label class="hidden-label" for="password">password</label>
+                            <input type="password" formControlName="password" size="50" placeholder="Password"
+                                 required aria-required="true" aria-describedby="password-required">
+                                 <div *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)"
+                                 class="alert alert-danger">
+                                 <div id="password-required" *ngIf="f.password.errors.required">
+                                    password is required.
+                                </div>
+                                <div *ngIf="f.password.errors.minlength && !f.password.errors.required">
+                                    password must be at least 6 characters long.
+                                </div>
+                                <div *ngIf="f.password.errors.wrongPassword && !f.password.errors.required && !f.password.errors.minlength">
+                                    password must have a number and alphabet
+                                </div>
+                        </div>
+                    </div>
+                            <button href="#" class="btn-login" type="submit">Login</button>
+                    </div>
+                </div>
+
+            </form>
+
+       <!--  </div> -->
+
+    </section>
